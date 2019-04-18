@@ -1,0 +1,5 @@
+{"name":"Medicine","firstName":"A","producer":"Producer","price":10.0,"recipe":false,"id":1}
+{"name":"Medicine","firstName":"B","producer":"Producer","price":15.0,"recipe":true,"id":2}
+{"name":"Medicine","firstName":"C","producer":"Producer","price":17.0,"recipe":false,"id":3}
+{"name":"A","firstName":"B","producer":"P","price":16.0,"recipe":false,"id":4}
+{"name":"Medicine","firstName":"D","producer":"Producer","price":14.6,"recipe":false,"id":5}
