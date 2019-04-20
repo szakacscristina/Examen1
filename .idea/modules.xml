@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FXFarmacy.iml" filepath="$PROJECT_DIR$/FXFarmacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FXCar.iml" filepath="$PROJECT_DIR$/FXCar.iml" />
     </modules>
   </component>
 </project>
