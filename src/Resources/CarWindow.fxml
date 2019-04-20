@@ -1,0 +1,56 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
+
+
+<HBox fx:controller="UI.JavaFXConsole.CarController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+
+    <VBox>
+        <TableView fx:id="tblCar" editable="true">
+            <columns>
+                <TableColumn fx:id="colCar" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colCarModel" text="Model">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="model" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colCarBuyKilometers" text="Buy Kilometers">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="buyKilometers" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colCarRentPerDay" text="Rent per day">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="rentPerDay" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TextField fx:id="txtCarId" promptText="ID"/>
+        <TextField fx:id="txtCarModel" promptText="Model"/>
+        <TextField fx:id="txtCarBuyKilometers" promptText="Buy kilometers"/>
+        <TextField fx:id="txtCarRentPerDay" promptText="Rent per day"/>
+
+        <Button fx:id="btnAddCar" text="Add Car" onAction="#btnAddCarClick"/><Button fx:id="btnUpdateCar" text="Update Car" onAction="#btnUpdateCarClick"/>
+        <Button fx:id="btnRemoveCar" text="Remove Car" onAction="#btnRemoveCarClick"/>
+        <Button fx:id="btnGetAllCars" text="Get All Cars" onAction="#btnGetAllCarsClick"/>
+
+        <TextField fx:id="txtCarSearch" promptText="Car Search"/>
+        <Button fx:id="btnCarSearch" text="Search car" onAction="#btnSearchCar"/>
+
+        <Button fx:id="btnUndoCar" text="Undo" onAction="#btnUndoCarClick"/>
+        <Button fx:id="btnRedoCar" text="Redo" onAction="#btnRedoCarClick"/>
+
+
+    </VBox>
+</HBox>

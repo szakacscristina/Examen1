@@ -1,21 +1,21 @@
 //package UI.OldConsole;
 //
-//import Domain.Client;
-//import Domain.Medicine;
+//import Domain.Car;
+//import Domain.Rent;
 //import Domain.Transaction;
-//import Service.ClientService;
-//import Service.MedicineService;
+//import Service.CarService;
+//import Service.RentService;
 //import Service.TransactionService;
 //
 //import java.util.Scanner;
 //
 //public class Console {
-//    private MedicineService medicineService;
-//    private ClientService clientService;
+//    private RentService medicineService;
+//    private CarService clientService;
 //    private TransactionService transactionService;
 //    private Scanner scanner;
 //
-//    public Console(MedicineService medicineService, ClientService clientService, TransactionService transactionService) {
+//    public Console(RentService medicineService, CarService clientService, TransactionService transactionService) {
 //        this.medicineService = medicineService;
 //        this.clientService = clientService;
 //        this.transactionService = transactionService;
@@ -102,7 +102,7 @@
 //
 //            medicineService.addAndUpdate( id, name, firstName, producer, price, recipe);
 //
-//            System.out.println("Medicine added successfully!");
+//            System.out.println("Rent added successfully!");
 //        } catch (RuntimeException rex) {
 //            System.out.println("Errors:\n" + rex.getMessage());
 //        }
@@ -115,14 +115,14 @@
 //
 //            medicineService.delete(id);
 //
-//            System.out.println("Medicine removed successfully!");
+//            System.out.println("Rent removed successfully!");
 //        } catch (RuntimeException rex) {
 //            System.out.println("Errors:\n" + rex.getMessage());
 //        }
 //    }
 //
 //    private void handleShowAllMedicines() {
-//        for (Medicine medicine : medicineService.getAll()) {
+//        for (Rent medicine : medicineService.getAll()) {
 //            System.out.println(medicine);
 //        }
 //    }
@@ -171,7 +171,7 @@
 //
 //            clientService.addAndUpdate(id, name, firstName, CNP, dateOfBirth, dateOfRegistration);
 //
-//            System.out.println("Client added successfully!");
+//            System.out.println("Car added successfully!");
 //        } catch (RuntimeException rex) {
 //            System.out.println("Errors:\n" + rex.getMessage());
 //        }
@@ -184,14 +184,14 @@
 //
 //            clientService.delete(id);
 //
-//            System.out.println("Client removed successfully!");
+//            System.out.println("Car removed successfully!");
 //        } catch (RuntimeException rex) {
 //            System.out.println("Errors:\n" + rex.getMessage());
 //        }
 //    }
 //
 //    private void handleShowAllClients() {
-//        for (Client client : clientService.getAll()) {
+//        for (Car client : clientService.getAll()) {
 //            System.out.println(client);
 //        }
 //    }

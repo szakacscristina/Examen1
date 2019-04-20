@@ -46,7 +46,7 @@ public class JsonRepository<T extends Entity> implements IRepository<T> {
         Gson gson = new Gson();
         try (FileWriter out = new FileWriter(filename)) {
             try (BufferedWriter bufferedWriter = new BufferedWriter(out)) {
-//                bufferedWriter.write(gson.toJson(storage.values()));
+              bufferedWriter.write(gson.toJson(storage.values()));
                 for (T entity : storage.values()) {
                     bufferedWriter.write(gson.toJson(entity));
                     bufferedWriter.newLine();

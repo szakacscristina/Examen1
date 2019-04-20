@@ -1,7 +1,7 @@
 package UI.JavaFXConsole;
 
-import Service.ClientService;
-import Service.MedicineService;
+import Service.CarService;
+import Service.RentService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,17 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ManagerController {
-    public Button btnMedicine;
-    public Button btnClient;
+    public Button btnRent;
+    public Button btnCar;
    // public Button btnTransaction;
 
-    private MedicineService medicineService;
-    private ClientService clientService;
+    private RentService rentService;
+    private CarService carService;
   //  private TransactionService transactionService;
 
-    public void setServices(MedicineService medicineService, ClientService clientService) {
-        this.medicineService = medicineService;
-        this.clientService = clientService;
+    public void setServices(RentService rentService, CarService carService) {
+        this.rentService = rentService;
+        this.carService = carService;
        // this.transactionService = transactionService;
     }
 
@@ -32,18 +32,18 @@ public class ManagerController {
      *
      * @param actionEvent
      */
-    public void btnMedicineClick(ActionEvent actionEvent) {
+    public void btnRentClick(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/MedicineWindow.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/RentWindow.fxml"));
 
             Scene scene = new Scene(fxmlLoader.load(), 600, 600);
             Stage stage = new Stage();
-            stage.setTitle("Medicine manager");
+            stage.setTitle("Rent manager");
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
-            MedicineController controller =  fxmlLoader.getController();
-            controller.setMedicineService(medicineService);
+            RentController controller =  fxmlLoader.getController();
+            controller.setRentService(rentService);
             stage.showAndWait();
         } catch (IOException e) {
             Logger logger = Logger.getLogger(getClass().getName());
@@ -55,18 +55,18 @@ public class ManagerController {
      *
      * @param actionEvent
      */
-    public void btnClientClick(ActionEvent actionEvent) {
+    public void btnCarClick(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/ClientWindow.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/CarWindow.fxml"));
 
             Scene scene = new Scene(fxmlLoader.load(), 600, 600);
             Stage stage = new Stage();
-            stage.setTitle("Client Card manager");
+            stage.setTitle("Car manager");
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
-            ClientController controller =  fxmlLoader.getController();
-            controller.setClientService(clientService);
+            CarController controller =  fxmlLoader.getController();
+            controller.setCarService(carService);
             stage.showAndWait();
         } catch (IOException e) {
             Logger logger = Logger.getLogger(getClass().getName());

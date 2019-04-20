@@ -1,7 +1,7 @@
 package Tests.RepositoryTests;
 
-import Domain.Client;
-import Domain.ClientValidator;
+import Domain.Car;
+import Domain.CarValidator;
 import Domain.Entity;
 import Repository.IRepository;
 import Repository.InMemoryRepository;
@@ -12,19 +12,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class InMemoryRepositoryTest <T extends Entity>{
 
     @Test
-    void addAndUpdateShouldAddAndUpdateClients() {
-        IRepository<Client> repository = new InMemoryRepository<>(new ClientValidator());
-        Client client1 = new Client(1, "TestFirst", "TestFirst", "1234567891234", "12.12.2012", "10.10.2020");
-        Client client2 = new Client(2, "TestSecond", "TestSecond", "1234567891234", "12.12.2012", "10.10.2020");
-        Client client1Duplicate = new Client(1, "TestFirst", "TestFirst", "1234567891234", "12.12.2012", "10.10.2020");
+    void addAndUpdateShouldAddAndUpdateCars() {
+        IRepository<Car> repository = new InMemoryRepository<>(new CarValidator());
+        Car car1 = new Car(1, "bmw",78, 10);
+        Car car2 = new Car(2, "mercedes",78, 9);
+        Car car1Duplicate = new Car(1, "TestFirst", 78, 10);
 
-        repository.add(client1);
-        repository.add(client2);
-        assertEquals(client1, repository.getAll().get(0));
+        repository.add(car1);
+        repository.add(car2);
+        assertEquals(car1, repository.getAll().get(0));
         assertEquals(2, repository.getAll().size());
 
         try{
-            repository.add(client1Duplicate);
+            repository.add(car1Duplicate);
             fail("Exception not throw for client duplicates");
         } catch (RuntimeException rex){
             assertTrue(true);
@@ -33,29 +33,29 @@ public class InMemoryRepositoryTest <T extends Entity>{
 
 
     @Test
-    void deleteShouldRemoveClients() {
-        IRepository<Client> repository = new InMemoryRepository<>(new ClientValidator());
-        Client client1 = new Client(1, "TestFirst", "TestFirst", "1234567891234", "12.12.2012", "10.10.2020");
-        Client client2 = new Client(2, "TestSecond", "TestSecond", "1234567891234", "12.12.2012", "10.10.2020");
+    void deleteShouldRemoveCars() {
+        IRepository<Car> repository = new InMemoryRepository<>(new CarValidator());
+        Car car1 = new Car(1, "bmw",78, 10);
+        Car car2 = new Car(2, "mercedes",78, 9);
 
-        repository.add(client1);
-        repository.add(client2);
-        repository.remove(client1.getId());
-        repository.remove(client2.getId());
+        repository.add(car1);
+        repository.add(car2);
+        repository.remove(car1.getId());
+        repository.remove(car2.getId());
         assertEquals(0, repository.getAll().size());
         assertFalse(repository.getAll().size() != 0);
     }
 
     @Test
     void getAll() {
-        IRepository<Client> repository = new InMemoryRepository<>(new ClientValidator());
-        Client client1 = new Client(1, "TestFirst", "TestFirst", "1234567891234", "12.12.2012", "10.10.2020");
-        Client client2 = new Client(2, "TestSecond", "TestSecond", "1234567891234", "12.12.2012", "10.10.2020");
+        IRepository<Car> repository = new InMemoryRepository<>(new CarValidator());
+        Car car1 = new Car(1, "bmw",78, 10);
+        Car car2 = new Car(2, "mercedes",78, 9);
 
-        repository.add(client1);
-        repository.add(client2);
-        assertEquals(client1, repository.getAll().get(0));
-        assertEquals(client2, repository.getAll().get(1));
+        repository.add(car1);
+        repository.add(car2);
+        assertEquals(car1, repository.getAll().get(0));
+        assertEquals(car2, repository.getAll().get(1));
         assertTrue(repository.getAll().size() == 2);
     }
 }

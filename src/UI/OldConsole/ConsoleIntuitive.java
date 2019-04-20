@@ -1,21 +1,21 @@
 //package UI.OldConsole;
 //
-//import Domain.Client;
-//import Domain.Medicine;
+//import Domain.Car;
+//import Domain.Rent;
 //import Domain.Transaction;
-//import Service.ClientService;
-//import Service.MedicineService;
+//import Service.CarService;
+//import Service.RentService;
 //import Service.TransactionService;
 //
 //import java.util.Scanner;
 //
 //public class ConsoleIntuitive {
-//    private MedicineService medicineService;
-//    private ClientService clientService;
+//    private RentService medicineService;
+//    private CarService clientService;
 //    private TransactionService transactionService;
 //    private Scanner scanner;
 //
-//    public ConsoleIntuitive(MedicineService medicineService, ClientService clientService, TransactionService transactionService) {
+//    public ConsoleIntuitive(RentService medicineService, CarService clientService, TransactionService transactionService) {
 //        this.medicineService = medicineService;
 //        this.clientService = clientService;
 //        this.transactionService = transactionService;
@@ -88,7 +88,7 @@
 //    private void handleAddAndUpdateMedicine(Integer id, String name, String firstName, String producer, Double price, Boolean recipe){
 //        try {
 //            medicineService.addAndUpdate(id, name, firstName, producer, price, recipe);
-//            System.out.println("Medicine added!\n");
+//            System.out.println("Rent added!\n");
 //        } catch (Exception ex) {
 //            System.out.println("Errors:\n" + ex.getMessage());
 //        }
@@ -97,7 +97,7 @@
 //    private void handleRemoveMedicine(Integer id){
 //        try {
 //            medicineService.delete(id);
-//            System.out.println("Medicine removed!\n");
+//            System.out.println("Rent removed!\n");
 //        } catch (Exception ex) {
 //            System.out.println("Errors:\n" + ex.getMessage());
 //        }
@@ -105,7 +105,7 @@
 //
 //    private  void handleAllMedicine() {
 //        try {
-//            for (Medicine medicine : medicineService.getAll()) {
+//            for (Rent medicine : medicineService.getAll()) {
 //                System.out.println(medicine);
 //            }
 //        } catch (Exception ex) {
@@ -116,7 +116,7 @@
 //    private void handleAddAndUpdateClient(Integer id, String name, String firstName, String CNP, String dateOfBirth, String dateOfRegistration){
 //        try {
 //            clientService.addAndUpdate(id, name, firstName, CNP, dateOfBirth, dateOfRegistration);
-//            System.out.println("Client added!\n");
+//            System.out.println("Car added!\n");
 //        } catch (Exception ex) {
 //            System.out.println("Errors:\n" + ex.getMessage());
 //        }
@@ -125,7 +125,7 @@
 //    private void handleRemoveClient(Integer id){
 //        try {
 //            clientService.delete(id);
-//            System.out.println("Client removed!\n");
+//            System.out.println("Car removed!\n");
 //        } catch (Exception ex) {
 //            System.out.println("Errors:\n" + ex.getMessage());
 //        }
@@ -133,7 +133,7 @@
 //
 //    private  void handleAllClients() {
 //        try {
-//            for (Client client : clientService.getAll()) {
+//            for (Car client : clientService.getAll()) {
 //                System.out.println(client);
 //            }
 //        } catch (Exception ex) {

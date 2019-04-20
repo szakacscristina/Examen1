@@ -1,0 +1,56 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.CheckBox?>
+
+<HBox fx:controller="UI.JavaFXConsole.RentController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+    <VBox>
+        <TableView fx:id="tblRent" editable="true">
+            <columns>
+                <TableColumn fx:id="colRentCarId" text="CarID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="carId" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colRentNumberOfDays" text="Number of days">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="numberOfDays" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="colRentKilometers" text="Kilometers">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="kilometers" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+        <TextField fx:id="txtRentCarId" promptText="ID"/>
+        <TextField fx:id="txtRentNumberOfDays" promptText="Number of days"/>
+        <TextField fx:id="txtRentKilometers" promptText="Kilometers"/>
+
+        <Button fx:id="btnAddRent" text="Add Rent" onAction="#btnAddRentClick"/>
+        <Button fx:id="btnUpdateRent" text="Update Rent" onAction="#btnUpdateRentClick"/>
+        <Button fx:id="btnRemoveRent" text="Remove Rent" onAction="#btnRemoveRentClick"/>
+        <Button fx:id="btnGetAllRents" text="Get All Rents" onAction="#btnGetAllRentsClick"/>
+
+        <TextField fx:id="txtRentSearch" promptText="Rent to search"/>
+        <Button fx:id="btnRentSearch" text="Search rent" onAction="#btnSearchRentClick"/>
+
+        <!--<Button fx:id="btnMedicineSort" text="Sort medicines" onAction="#btnSortMedicinesClick"/>-->
+
+        <!--TextField fx:id="txtMedicineExpensive" promptText="Price below which to increase the price"/>
+        <TextField fx:id="txtMedicinePercent" promptText="Percent"/>
+        <Button fx:id="btnMedicineExpensive" text="Update the price" onAction="#btnIncreaseMedicinesClick"/>-->
+
+        <Button fx:id="btnUndoRent" text="Undo" onAction="#btnUndoRentClick"/>
+        <Button fx:id="btnRedoRent" text="Redo" onAction="#btnRedoRentClick"/>
+
+    </VBox>
+</HBox>
